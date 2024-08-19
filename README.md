@@ -43,17 +43,19 @@ From the root of the project, the following commands can be executed:
 
 ### 5. Re openjdk:11.*
 
-    - Note, I know there is a openjdk:11-jdk-slim-buster (and others) image, but I wanted to build my own for the purpose of the example and research... 
+    I know there is a prebuild openjdk:11-jdk-slim-buster (and others) images available, but I wanted to build my own for the purpose of the research, learning opportunity... 
 
-### Some Random commands:
+
+### Some random usefull commands:
     
-    docker image history <image name:tag>
-    docker build --target <stage name> -t <image name:tag> .
+    - docker image instpect <image name:tag>
+    - docker image history <image name:tag>
+    - docker build --target <stage name> -t <image name:tag> .
 
 
 ### References 
 
-These are some good links to follow to give a very easy how to start with docker and docker-compose.
+Below are some good links to follow, providing a good initial starting point for docker and docker-compose etc.
 
 - [Docker Crash Course for Absolute Beginners [NEW]](https://www.youtube.com/watch?v=pg19Z8LL06w)
 - [Ultimate Docker Compose Tutorial](https://www.youtube.com/watch?v=SXwC9fSwct8)
