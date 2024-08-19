@@ -2,12 +2,9 @@
 
 ## Basic idea.
 
-We're going to build 2 end states... 
-    - a Apache Hive environment comprising out of a Hiverserver2 and a Metaserver and 
-    - a Apache Hadoop cluster providing HDFS services
-        comprised out of a Namenode, a Datanode and a resourcemanager, nodemanager and a historyserver.
+We're going to show how to build images layer by layer... In the end producing a Apache Hadoop cluster providing HDFS services comprised out of a Namenode, a Datanode and a resourcemanager, nodemanager and a historyserver.
 
-The steps below detail how we start from a fresh Ubunto 20.04 OS image to end.
+The steps below detail how we start from a fresh Ubunto 20.04 OS image to the end.
 
 Various diagrams can be found in blog-doc/diagrams as well as the Word version of the www.medium.com article.
 
@@ -23,24 +20,22 @@ I will also explain a little bit about my docker compose.yaml files and the Make
 ## Pull source OS image
 make pullall
 
-## Start -> build-ubuntu-os-20.04
+
+## 1. -> build-ubuntu-os-20.04
 
 
-## 1. -> build-ubuntu-os-openjdk8
+## 2. -> build-ubuntu-os-openjdk11
 
-- Note, I know there is a openjdk:8-jdk-slim-buster (and others) image, but I wanted to build my own for the purpose of the example and research... 
+- Note, I know there is a openjdk:11-jdk-slim-buster (and others) image, but I wanted to build my own for the purpose of the example and research... 
 
 docker image history <image name:tag>
 
 docker build --target <stage name> -t <image name:tag> .
 
-## 2. -> build-hive-openjdk8
+
+## 3. -> build-hadoop-openjdk11
 
 
-## 3. -> build0-ubuntu-os-openjdk11
-
-
-## 4. -> build-hadoop-openjdk11
 
 
 ### References 
