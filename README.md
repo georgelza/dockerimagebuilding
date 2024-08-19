@@ -12,25 +12,32 @@ Each of the directories in the "project" have a local README.md file with more d
 
 The "entire" project/s can be build by executing 
 
-- ```make pullall``` followed by 
-- ```make buildall```.
+- ```make pullall```
+- ```make buildall```
 
 I will also explain a little bit about my docker compose.yaml files and the Makefile's utilised.
 
-### Pull source OS image
-make pullall
+### 1. Pull source images and binaries
 
+    - make pullos
+    - make pullsource
 
-### 1. -> build-ubuntu-os-20.04
+### 2. -> build-ubuntu-os-20.04
 
+    - make build
 
-### 2. -> build-ubuntu-os-openjdk11
+### 3. -> build-ubuntu-os-openjdk11
 
+    - make build
 
-### 3. -> build-hadoop-openjdk11
+### 4. -> build-hadoop-openjdk11
+    
+    - make buildbase
+    - make build
 
+### 5. Re openjdk:11.*
 
-- Note, I know there is a openjdk:11-jdk-slim-buster (and others) image, but I wanted to build my own for the purpose of the example and research... 
+    - Note, I know there is a openjdk:11-jdk-slim-buster (and others) image, but I wanted to build my own for the purpose of the example and research... 
 
 ### Some Random commands:
     
