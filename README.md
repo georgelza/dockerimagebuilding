@@ -26,16 +26,16 @@ make pullall
 
 - 2. -> build-ubuntu-os-openjdk11
 
-- Note, I know there is a openjdk:11-jdk-slim-buster (and others) image, but I wanted to build my own for the purpose of the example and research... 
-
-docker image history <image name:tag>
-
-docker build --target <stage name> -t <image name:tag> .
-
 
 - 3. -> build-hadoop-openjdk11
 
 
+- Note, I know there is a openjdk:11-jdk-slim-buster (and others) image, but I wanted to build my own for the purpose of the example and research... 
+
+- Some Random commands:
+    
+    docker image history <image name:tag>
+    docker build --target <stage name> -t <image name:tag> .
 
 
 ### References 
