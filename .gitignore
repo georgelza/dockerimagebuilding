@@ -15,7 +15,6 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-
 # Dependency directories (remove the comment below to include it)
 # vendor/
 .DS_Store
@@ -24,7 +23,5 @@
 
 # Folders where jar and *.tar.gz files will be staged, not to be included in git sync.
 # also excluding these via *.tar.gz and *.jar definitions higher up.
-temp/*
-examples/*
 
 build-hadoop-openjdk11-hdfs/base/stage/

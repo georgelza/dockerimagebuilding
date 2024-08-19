@@ -1,4 +1,7 @@
 .DEFAULT_GOAL := help
+
+REPO_NAME=georgelza
+IMAGE_NAME=ubuntu20.04
 VERSION=1.0.1
 
 define HELP
@@ -16,5 +19,5 @@ help:
 
 
 build:  
-	sudo docker build -t ubuntu20.04:$(VERSION) .
+	sudo docker build -t $(REPO_NAME)/$(IMAGE_NAME):$(VERSION) .
 
