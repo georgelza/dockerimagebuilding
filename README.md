@@ -17,23 +17,29 @@ The "entire" project/s can be build by executing
 
 I will also explain a little bit about my docker compose.yaml files and the Makefile's utilised.
 
+From the root of the project, the following commands can be executed:
+(see the root Makefile for the commands utilised).
+
 ### 1. Pull source images and binaries
 
-    - make pullos
-    - make pullsource
+    - make pullall          -> pull all the source images and binaries..
+    - make pullos           -> Pull only the OS image.
+    - make pullsource       -> Pull only the source application (Hadoop) binaries/distribution..
 
 ### 2. -> build-ubuntu-os-20.04
 
-    - make build
+    - make buildos          -> use the base OS image and add utilities.
 
 ### 3. -> build-ubuntu-os-openjdk11
 
-    - make build
+    - make buildjdk11       -> Use the image build in #2 to build the JDK image.
 
 ### 4. -> build-hadoop-openjdk11
     
-    - make buildbase
-    - make build
+    - make buildhdfsbase    -> Build the base image used to build the HDFS cluster.
+    - make buildhdfs        -> Build the various HDFS nodes.
+
+    - make buildall         -> Do everything above in one go.
 
 ### 5. Re openjdk:11.*
 
