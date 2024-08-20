@@ -17,7 +17,6 @@ help:
 	@echo "$$HELP"
 .PHONY: help
 
-
 build:  
 	sudo docker build -t $(REPO_NAME)/$(IMAGE_NAME):$(VERSION) .
 
