@@ -1,0 +1,18 @@
+FROM golang:1.22 AS builder
+
+ENV GOPROXY=https://proxy.golang.org,direct
+ENV GOSUMDB=sum.golang.org
+
+WORKDIR /app
+
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
+
+COPY cmd/main.go ./cmd/
+
+RUN go build -v -o ./app/main ./cmd/main.go
+
+LABEL Author="George Leonard (georgelza@gmail.com)"
+
+CMD ["/app/main"]

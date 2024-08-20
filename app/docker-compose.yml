@@ -1,0 +1,24 @@
+
+configs:
+  app_file:
+    file: ./conf/app.json
+  kafka_file:
+    file: ./conf/kafka.json
+
+services:
+  app:
+    image: georgelza/blogapp2:1.0.0
+    container_name: app
+    hostname: app
+    environment:
+      PROJECT_USERNAME: ${PROJECT_USERNAME}
+      PROJECT_PASSWORD: ${PROJECT_PASSWORD}
+    configs:
+      - source: app_file
+        target: /app/conf/avro_app.json
+        mode: 444
+      - source: kafka_file
+        target: /app/conf/avro_kafka.json
+        mode: 444
+      
+      
