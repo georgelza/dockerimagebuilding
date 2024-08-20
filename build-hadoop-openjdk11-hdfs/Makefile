@@ -1,5 +1,8 @@
 .DEFAULT_GOAL := help
 
+REPO_NAME=georgelza
+IMAGE_NAME=hadoop-base
+
 HADOOP_VERSION=3.3.5-java11
 VERSION=1.0.1
 
@@ -31,7 +34,10 @@ help:
 .PHONY: help
 
 buildbase:
-	sudo docker build -t hadoop-base-$(HADOOP_VERSION):$(VERSION) ./base
+	cd base; sudo docker build -t $(REPO_NAME)/$(IMAGE_NAME)-$(HADOOP_VERSION):$(VERSION) .
+
+buildwgbase:
+	cd base; sudo docker build -t $(REPO_NAME)/$(IMAGE_NAME)-$(HADOOP_VERSION):$(VERSION) --file Dockerfile.wget .
 
 build:  
 	sudo docker build -t hadoop-namenode-$(HADOOP_VERSION):$(VERSION) ./namenode

@@ -5,7 +5,7 @@ define HELP
 
 Available commands:
 
-- build: Build this project
+- build: Build this project.
 
 endef
 
