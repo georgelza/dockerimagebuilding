@@ -39,5 +39,7 @@ buildopenjdk:
 buildhadoop:
 	cd build-hadoop-openjdk11-hdfs; make buildbase; make build
 
+buildapp:
+	cd app; make build
 
 
